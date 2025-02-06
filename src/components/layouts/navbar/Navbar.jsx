@@ -1,4 +1,6 @@
 import { CartIcon } from "../../common/cart/CartIcon";
+import "./navbar.css";
+
 export const Navbar = () => {
   return (
     <div>

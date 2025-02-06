@@ -1,4 +1,6 @@
 import { IoCartOutline } from "react-icons/io5";
+import "./cartIcon.css";
+
 export const CartIcon = () => {
   return (
     <div>

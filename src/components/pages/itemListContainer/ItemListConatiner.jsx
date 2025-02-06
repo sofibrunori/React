@@ -1,3 +1,5 @@
+import ".itemListConatiner.css";
+
 export const ItemListConatiner = ({ greeting }) => {
   return (
     <section>
