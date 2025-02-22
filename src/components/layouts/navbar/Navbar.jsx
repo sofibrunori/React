@@ -1,17 +1,21 @@
 import { CartIcon } from "../../common/cart/CartIcon";
+import { Link } from "react-router";
 import "./navbar.css";
 
 export const Navbar = () => {
   return (
     <div>
       <nav>
-        <h2>IMPRIMIDECO</h2>
+        <Link to="/">IMPRIMIDECO</Link>
         <ul>
           <li>Cuadros blanco y negro</li>
           <li>Cuadros infantiles</li>
           <li>Cuadros de paisajes</li>
         </ul>
-        <CartIcon />
+        <Link to="/cart">
+          {" "}
+          <CartIcon />{" "}
+        </Link>
       </nav>
     </div>
   );

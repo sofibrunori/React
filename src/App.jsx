@@ -1,12 +1,18 @@
 import { Navbar } from "./components/layouts/navbar/Navbar";
-import { ItemListConatiner } from "./components/pages/itemListContainer/ItemListConatiner";
+import { Cart } from "./components/pages/itemListContainer/cart/Cart";
+import { BrowserRouter, Routes, Route } from "react-router";
+import { ItemListConatiner } from "./components/pages/itemListContainer/itemListContainer/ItemListConatiner";
 
 function App() {
   return (
-    <div>
+    <BrowserRouter>
       <Navbar />
-      <ItemListConatiner greeting="Hola react" />
-    </div>
+      <Routes>
+        <Route path="/" element={<ItemListConatiner />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="*" element={<h2>404 Not found</h2>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
