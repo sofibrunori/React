@@ -1,55 +1,29 @@
-/*import "./itemListContainer";*/
-/*import { useState } from "react";
-import { useEffect } from "react";
-
-export const ItemListConatiner = () => {
-  const [usuarios, setUsuarios] = useState({});
-
-  useEffect(() => {
-    const getUsuarios = fetch("https://jsonplaceholder.typicode.com/users");
-    getUsuarios
-      .then((res) => res.json())
-      .then((res) => setUsuarios(res))
-      .catch((error) => console.log(error));
-  }, []);
-
-  return (
-    <div>
-      {usuarios.map((usuario) => {
-        return (
-          <div key={usuario.id}>
-            <h2>{usuario.name}</h2>
-          </div>
-        );
-      })}
-    </div>
-  );
-};
-*/
-
 import { useFetch } from "../../../../hooks/useFetch";
+import CircularIndeterminate from "../../../common/cart/loading/Loading";
+import { ProductCard } from "../../../common/productCard/ProductCard";
+import "./itemListContainer.css";
 
 export const ItemListConatiner = () => {
   const {
-    backend: usuarios,
+    backend: items,
     loading,
     error,
-  } = useFetch("https://jsonplaceholder.typicode.com/users");
+  } = useFetch(
+    "https://fakestoreapi.com/products?limit=9" /*"../../../../backend/products"*/
+  );
 
   return (
     <div>
       {loading ? (
-        "is loading"
+        <CircularIndeterminate />
       ) : (
-        <div>
-          {usuarios.map((usuario) => {
-            return (
-              <div key={usuario.id}>
-                <h2>{usuario.name}</h2>
-              </div>
-            );
-          })}
-        </div>
+        <section>
+          <div className="products">
+            {items.map((item) => {
+              return <ProductCard key={item.id} item={item} />;
+            })}
+          </div>
+        </section>
       )}
       {error && <h2>{error.message}</h2>}
     </div>

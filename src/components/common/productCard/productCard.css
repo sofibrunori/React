@@ -1,0 +1,8 @@
+.productcard {
+  border: 1px black solid;
+  padding: 5%;
+  margin: 3%;
+  font-weight: 400;
+  font-size: 12px;
+  text-align: center;
+}

@@ -14,7 +14,7 @@ export const useFetch = (url, valorInicial = []) => {
         .then((res) => setBackend(res))
         .catch(() => setError({ message: "404 Not Found" }))
         .finally(() => setLoading(false));
-    }, 3000);
+    }, 1500);
   }, [url]);
 
   return { backend, loading, error };
