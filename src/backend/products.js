@@ -1,6 +1,6 @@
 export let products = [
   {
-    id: 1,
+    //id: 1,
     title: "cuadro gato",
     price: 35000,
     stock: 5,
@@ -10,7 +10,7 @@ export let products = [
       "https://res.cloudinary.com/dd8fbfpvq/image/upload/v1740526201/byn1_dbmmm0.png",
   },
   {
-    id: 2,
+    //id: 2,
     title: "cuadro tacos",
     price: 35000,
     stock: 5,
@@ -20,7 +20,7 @@ export let products = [
       "https://res.cloudinary.com/dd8fbfpvq/image/upload/v1740526201/byn2_qrybz2.png",
   },
   {
-    id: 3,
+    //id: 3,
     title: "cuadro boliche",
     price: 35000,
     stock: 5,
@@ -30,7 +30,7 @@ export let products = [
       "https://res.cloudinary.com/dd8fbfpvq/image/upload/v1740526202/byn3_twnkhl.png",
   },
   {
-    id: 4,
+    //id: 4,
     title: "cuadro Positano",
     price: 42000,
     stock: 3,
@@ -40,7 +40,7 @@ export let products = [
       "https://res.cloudinary.com/dd8fbfpvq/image/upload/v1740526204/paisaje1_db1ecw.png",
   },
   {
-    id: 5,
+    //id: 5,
     title: "cuadro Aurora Boreal",
     price: 42000,
     stock: 3,
@@ -50,7 +50,7 @@ export let products = [
       "https://res.cloudinary.com/dd8fbfpvq/image/upload/v1740526204/paisaje2_fide29.png",
   },
   {
-    id: 6,
+    //id: 6,
     title: "cuadro Capadocia",
     price: 42000,
     stock: 3,
@@ -60,7 +60,7 @@ export let products = [
       "https://res.cloudinary.com/dd8fbfpvq/image/upload/v1740526202/paisaje3_vniyps.png",
   },
   {
-    id: 7,
+    //id: 7,
     title: "cuadro autos",
     price: 23000,
     stock: 15,
@@ -70,7 +70,7 @@ export let products = [
       "https://res.cloudinary.com/dd8fbfpvq/image/upload/v1740526203/infantil1_mjolge.png",
   },
   {
-    id: 8,
+    //id: 8,
     title: "cuadro arcoiris",
     price: 18000,
     stock: 8,
@@ -80,7 +80,7 @@ export let products = [
       "https://res.cloudinary.com/dd8fbfpvq/image/upload/v1740526201/infantil2_perkae.png",
   },
   {
-    id: 9,
+    //id: 9,
     title: "cuadro Bambi",
     price: 18000,
     stock: 8,

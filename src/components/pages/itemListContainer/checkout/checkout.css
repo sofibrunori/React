@@ -1,0 +1,13 @@
+.form {
+  display: grid;
+  justify-content: space-around;
+  margin-top: 10%;
+}
+
+.input {
+  margin: 10%;
+}
+
+.button {
+  margin: 10%;
+}

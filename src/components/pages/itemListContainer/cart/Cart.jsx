@@ -1,3 +1,10 @@
+import { Link } from "react-router";
+
 export const Cart = () => {
-  return <h2>Este es el carrito</h2>;
+  return (
+    <div>
+      <h2>Este es el carrito</h2>
+      <Link to="/checkout">Finalizar compra</Link>
+    </div>
+  );
 };
