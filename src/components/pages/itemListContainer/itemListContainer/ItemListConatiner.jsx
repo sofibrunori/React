@@ -4,9 +4,11 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import "./itemListContainer.css";
 import { ProductCard } from "../../../common/productCard/ProductCard";
+import CircularIndeterminate from "../../../common/loading/Loading";
 
 export const ItemListConatiner = () => {
   const { items, setItems } = useState([]);
+  const { loading, setLoading } = useState(true);
   const { name } = useParams();
 
   useEffect(() => {
@@ -15,18 +17,34 @@ export const ItemListConatiner = () => {
     if (name) {
       consulta = query(refCollection, where("category", "==", name));
     }
-    const getProducts = getDocs(consulta);
-    getProducts
-      .then((res) => {
-        const arrayProductos = res.docs.map((elm) => {
-          return { id: elm.id, ...elm.data() };
-        });
+    const getProducts = async () => {
+      try {
+        const querySnapshot = await getDocs(consulta);
+        const arrayProductos = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
         setItems(arrayProductos);
-      })
-      .catch((error) => console.log(error));
-  }, [name]);
+      } catch (error) {
+        console.error("Error al obtener los productos:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getProducts();
+  }, [name, setItems, setLoading]);
 
-  console.log(items);
+  if (loading) {
+    return (
+      <div>
+        <CircularIndeterminate />
+      </div>
+    );
+  }
+
+  if (!items || items.length === 0) {
+    return <div>No hay productos disponibles</div>;
+  }
 
   return (
     <section className="products">
